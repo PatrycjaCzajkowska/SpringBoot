@@ -7,7 +7,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="sat, 01 Dec 2001 00:00:00 GMT">
-<title>tecno-tab | home</title>
+<title>English learning | home</title>
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
 <link href="static/css/style.css" rel="stylesheet">
 <!--[if lt IE 9]>
@@ -19,7 +19,7 @@
 <body>
 	<div role="navigation">
 		<div class="navbar navbar-inverse">
-			<a href="/welcome" class="navbar-brand">Tecno-Tab</a>
+			<a href="/welcome" class="navbar-brand">English learning</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="/login">Login</a></li>
@@ -34,8 +34,8 @@
 		<c:when test="${mode=='MODE_HOME' }">
 			<div class="container" id="homediv">
 				<div class="jumbotron text-center">
-					<h1>Welcome to Tecno-tab</h1>
-					<h3>Subscribe my channel to support me</h3>
+					<h1>Welcome in the web application to learning English :)</h1>
+					<h3>Start learning and become a champion!</h3>
 				</div>
 			</div>
 

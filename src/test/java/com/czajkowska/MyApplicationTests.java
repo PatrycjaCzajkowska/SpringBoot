@@ -1,4 +1,4 @@
-package com.vikash;
+package com.czajkowska;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
