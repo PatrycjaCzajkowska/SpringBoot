@@ -25,10 +25,101 @@
 					<li><a href="/login">Login</a></li>
 					<li><a href="/register">New Registration</a></li>
 					<li><a href="/show-users">All Users</a></li>
+					<li><a href="/new-word">New word</a></li>
+					<li><a href="/list">List </a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
+
+	<c:choose>
+		<c:when test="${mode=='MODE_REGISTER1' }">
+			<div class="container text-center">
+				<h3>New word</h3>
+				<hr>
+				<form class="form-horizontal" method="POST" action="save-word">
+					<input type="hidden" name="id" value="${word.id }" />
+					<div class="form-group">
+						<label class="control-label col-md-3">Polish version</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="username"
+								   value="${word.username }" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">English version</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="firstname"
+								   value="${word.firstname }" />
+						</div>
+					</div>
+					<div class="form-group ">
+						<input type="submit" class="btn btn-primary" value="Register" />
+					</div>
+				</form>
+			</div>
+		</c:when>
+
+		<c:when test="${mode=='ALL_USERS1' }">
+			<div class="container text-center" id="tasksDiv">
+				<h3>List</h3>
+				<hr>
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered">
+						<thead>
+						<tr>
+							<th>Id</th>
+							<th>Polish version</th>
+							<th>English version</th>
+							<th>Delete</th>
+							<th>Edit</th>
+						</tr>
+						</thead>
+						<tbody>
+						<c:forEach var="word" items="${words }">
+							<tr>
+								<td>${word.id}</td>
+								<td>${word.username}</td>
+								<td>${word.firstname}</td>
+								<td><a href="/delete-user1?id=${word.id }"><span
+										class="glyphicon glyphicon-trash"></span></a></td>
+								<td><a href="/edit-user1?id=${word.id }"><span
+										class="glyphicon glyphicon-pencil"></span></a></td>
+							</tr>
+						</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</c:when>
+
+		<c:when test="${mode=='MODE_UPDATE1' }">
+			<div class="container text-center">
+				<h3>Update word</h3>
+				<hr>
+				<form class="form-horizontal" method="POST" action="save-word">
+					<input type="hidden" name="id" value="${word.id }" />
+					<div class="form-group">
+						<label class="control-label col-md-3">Polish version</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="username"
+								   value="${word.username }" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">English version</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="firstname"
+								   value="${word.firstname }" />
+						</div>
+					</div>
+					<div class="form-group ">
+						<input type="submit" class="btn btn-primary" value="Update" />
+					</div>
+				</form>
+			</div>
+		</c:when>
+	</c:choose>
 
 	<div class="container" id="homediv">
 		<div class="jumbotron text-center">
@@ -47,35 +138,18 @@
 		<iframe width="400" height="200"
 			src="https://www.youtube.com/embed/wjNG_RcDqcY" frameborder="0"
 			allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			
 			<p> In this video you will learn 1000 most commonly used English words. Please watch this video and add a new word to the your learning list.</p>
 			<p>	W tym filmie nauczysz sie 1000 najczesciej uzywanych angielskich slow. Obejrzyj ten film i dodaj nowe slowo do Twojej listy uczenia sie.</p>
-			<div class="alert alert-success">
+		<div class="alert alert-success">
 			<h4>Session 2: English learning</h4>
+			<h4>Sesja 2: Nauka jezyka angelskiego</h4>
 		</div>
 		<iframe width="400" height="200"
 			src="https://www.youtube.com/embed/ut0ufVd_BXE" frameborder="0"
 			allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			
 			<p> In this video you will learn 150 most commonly used English verbs. Please watch this video and add a new word to the your learning list.</p>
 			<p>	W tym filmie nauczysz sie 150 najczesciej uzywanych angielskich czasownikow. Obejrzyj ten film i dodaj nowe slowo do Twojej listy uczenia sie.</p>
-<%--			<div class="alert alert-success">--%>
-<%--			<h4>Session 1: Spring Boot Tutorial</h4>--%>
-<%--		</div>--%>
-<%--		<iframe width="400" height="200"--%>
-<%--			src="https://www.youtube.com/embed/m0Xf6Bf6KFU" frameborder="0"--%>
-<%--			allow="autoplay; encrypted-media" allowfullscreen></iframe>--%>
-<%--			--%>
-<%--			<p> This is 1st Session of the tutorial..... </p>--%>
-<%--			<div class="alert alert-success">--%>
-<%--			<h4>Session 1: Spring Boot Tutorial</h4>--%>
-<%--		</div>--%>
-<%--		<iframe width="400" height="200"--%>
-<%--			src="https://www.youtube.com/embed/m0Xf6Bf6KFU" frameborder="0"--%>
-<%--			allow="autoplay; encrypted-media" allowfullscreen></iframe>--%>
-<%--			--%>
-<%--			<p> This is 1st Session of the tutorial..... </p>--%>
-<%--	</div>--%>
+	</div>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

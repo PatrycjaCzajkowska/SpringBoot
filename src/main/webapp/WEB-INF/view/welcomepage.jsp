@@ -88,6 +88,7 @@
 				</form>
 			</div>
 		</c:when>
+
 		<c:when test="${mode=='ALL_USERS' }">
 			<div class="container text-center" id="tasksDiv">
 				<h3>All Users</h3>
