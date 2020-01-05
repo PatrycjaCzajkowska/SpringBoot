@@ -1,8 +1,7 @@
 package com.czajkowska.repository;
 
-import org.springframework.data.repository.CrudRepository;
-
 import com.czajkowska.modal.User;
+import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Integer> {	
 	

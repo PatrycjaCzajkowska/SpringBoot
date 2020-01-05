@@ -20,17 +20,17 @@ public class RestController {
 
 	@GetMapping("/")
 	public String hello() {
-		return "This is the web application to learning English. Please go to page: localhost:8080/welcome" +
+		return "This is the web application to learning English. Go to page: localhost:8080/welcome" +
 				" and start to learn!";
 	}
 	
-	@GetMapping("/save-user") //save-user
+	@GetMapping("/save-user")
 	public String saveUser(@RequestParam String username, @RequestParam String firstname, @RequestParam String lastname, @RequestParam int age, @RequestParam String password) {
 		User user = new User(username, firstname, lastname, age, password);
 		userService.saveMyUser(user);
 		return "User Saved";
 	}
-	//added:
+
 	@GetMapping("/save-word")
 	public String saveWord(@RequestParam String username, @RequestParam String firstname) {
 		Word word = new Word(username, firstname);

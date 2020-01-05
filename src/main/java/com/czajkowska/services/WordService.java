@@ -14,11 +14,11 @@ import java.util.List;
 @Transactional
 public class WordService {
 
-	private final WordRepository wordRepository; //tworzenie instancji WordRepository
+	private final WordRepository wordRepository;
 
 	public WordService(WordRepository wordRepository) {
 		this.wordRepository=wordRepository;
-	} //konstruktor
+	}
 	
 	public void saveMyWord(Word word ) {
 		wordRepository.save(word);
@@ -39,10 +39,6 @@ public class WordService {
 	
 	public Word editWord(int id) {
 		return wordRepository.findOne(id);
-	}
-	
-	public Word findByUsername(String username) {  //zmienic na word
-		return wordRepository.findByUsername(username);
 	}
 	}
 

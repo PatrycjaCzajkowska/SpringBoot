@@ -10,17 +10,16 @@ public class Word {
 
 	@Id
 	private int id;
-	private String username;
-	private String firstname;
+	private String polish;
+	private String english;
 
 	public Word() {
-
 	}
 
-	public Word(String username, String firstname) {
+		public Word(String username, String firstname) {
 		super();
-		this.username = username;
-		this.firstname = firstname;
+		this.polish = username;
+		this.english = firstname;
 	}
 	public int getId() {
 		return id;
@@ -29,20 +28,20 @@ public class Word {
 		this.id = id;
 	}
 	public String getUsername() {
-		return username;
+		return polish;
 	}
 	public void setUsername(String username) {
-		this.username = username;
+		this.polish = username;
 	}
 	public String getFirstname() {
-		return firstname;
+		return english;
 	}
 	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+		this.english = firstname;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", firstname=" + firstname + "]";
+		return "Word [id=" + id + ", username=" + polish + ", firstname=" + english + "]";
 	}
 }

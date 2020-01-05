@@ -17,10 +17,8 @@ public class User {
 	private String password;
 	
 	public User() {
-		
 	}
-	
-	
+
 	public User(String username, String firstname, String lastname, int age, String password) {
 		super();
 		this.username = username;

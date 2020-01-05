@@ -124,31 +124,29 @@
 	<div class="container" id="homediv">
 		<div class="jumbotron text-center">
 			<h1>Welcome in English world!</h1>
-			<h1>Witaj w swiecie jezyka angielskiego! </h1>
 			<h3>We present you videos with the most important English vocabulary:</h3>
-			<h3>Zaprezentujemy Ci filmy z najczesciej uzywanym angielskim slownictwem:</h3>
 		</div>
 	</div>
 
 	<div class="container text-centered">
 		<div class="alert alert-success">
 			<h4>Session 1: English learning</h4>
-			<h4>Sesja 1: Nauka jezyka angelskiego</h4>
 		</div>
 		<iframe width="400" height="200"
 			src="https://www.youtube.com/embed/wjNG_RcDqcY" frameborder="0"
 			allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			<p> In this video you will learn 1000 most commonly used English words. Please watch this video and add a new word to the your learning list.</p>
-			<p>	W tym filmie nauczysz sie 1000 najczesciej uzywanych angielskich slow. Obejrzyj ten film i dodaj nowe slowo do Twojej listy uczenia sie.</p>
+			<p> In this video you will learn 1000 most commonly used English words.</p>
+			<p>	1. Watch this video and go to tab: "New word" to add a new word to the your learning list.</p>
+		    <p> 2. Go to tab: "List" to see all words that you learned.</p>
 		<div class="alert alert-success">
 			<h4>Session 2: English learning</h4>
-			<h4>Sesja 2: Nauka jezyka angelskiego</h4>
 		</div>
 		<iframe width="400" height="200"
 			src="https://www.youtube.com/embed/ut0ufVd_BXE" frameborder="0"
 			allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			<p> In this video you will learn 150 most commonly used English verbs. Please watch this video and add a new word to the your learning list.</p>
-			<p>	W tym filmie nauczysz sie 150 najczesciej uzywanych angielskich czasownikow. Obejrzyj ten film i dodaj nowe slowo do Twojej listy uczenia sie.</p>
+			<p> In this video you will learn 150 most commonly used English verbs.</p>
+			<p>	1. Please watch this video and go to tab: "New word" to add a new word to the your learning list.</p>
+			<p> 2. Go to tab: "List" to see all words that you learned.</p>
 	</div>
 
 	<!-- Optional JavaScript -->

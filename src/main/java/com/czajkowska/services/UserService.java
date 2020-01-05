@@ -18,7 +18,7 @@ public class UserService {
 	
 	public UserService(UserRepository userRepository) {
 		this.userRepository=userRepository;
-	} //konstruktor
+	}
 	
 	public void saveMyUser(User user ) {
 		userRepository.save(user);

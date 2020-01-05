@@ -25,101 +25,95 @@ public class ApplicationController {
 	@Autowired
 	WordService wordService;
 
-	/*
-	"MODE_HOME"); //strona z powitaniem
-	"MODE_REGISTER"); //New Registration: Username, FName, LName, age, Password + Register button
-
-	 */
-
 	@RequestMapping("/welcome") //Controller will be handle the request and call method
 	public String Welcome(HttpServletRequest request) {
 		request.setAttribute("mode", "MODE_HOME"); //strona z powitaniem
 		return "welcomepage";
 	}
 
-	@RequestMapping("/register")//wzor
+	@RequestMapping("/register")
 	public String registration(HttpServletRequest request) {
-		request.setAttribute("mode", "MODE_REGISTER"); //New Registration: Username, FName, LName, age, Password + Register button
+		request.setAttribute("mode", "MODE_REGISTER");
 		return "welcomepage";
 	}
-	@RequestMapping("/new-word")// tabela1   dodane///////////////////////////
+	@RequestMapping("/new-word")
 	public String registration1(HttpServletRequest request) {
-		request.setAttribute("mode", "MODE_REGISTER1"); //strona z filmikami + 2 pola
+		request.setAttribute("mode", "MODE_REGISTER1");
 		return "homepage";
 	}
 
-	@PostMapping("/save-user") //wzor
+	@PostMapping("/save-user")
 	public String registerUser(@ModelAttribute User user, BindingResult bindingResult, HttpServletRequest request) {
 		userService.saveMyUser(user);
-		request.setAttribute("mode", "MODE_HOME");  //ERROR ; strona z powitaniem
+		request.setAttribute("mode", "MODE_HOME");
 		return "welcomepage";
 	}
 
-	@PostMapping("/save-word") //tabela1   dodane///////////////////////////
+	@PostMapping("/save-word")
 	public String registerUser1(@ModelAttribute Word word, BindingResult bindingResult, HttpServletRequest request) {
 		wordService.saveMyWord(word);
-		request.setAttribute("mode", "MODE_HOME"); //ERROR ; strona z powitaniem?
+		request.setAttribute("mode", "MODE_HOME");
 		return "homepage";
 	}
 
-	@GetMapping("/show-users") //wzor
+	@GetMapping("/show-users")
 	public String showAllUsers(HttpServletRequest request) {
 		request.setAttribute("users", userService.showAllUsers());
-		request.setAttribute("mode", "ALL_USERS");//ID, Username, FName, LName, age, delete, edit
+		request.setAttribute("mode", "ALL_USERS");
 		return "welcomepage";
 	}
 
-	@GetMapping("/list") // dodane///////////////////////////
+	@GetMapping("/list")
 	public String showAllWords(HttpServletRequest request) {
 		request.setAttribute("words", wordService.showAllWords());
-		request.setAttribute("mode", "ALL_USERS1"); //BRAK srodka - SPRAWDZIC - BRAK
+		request.setAttribute("mode", "ALL_USERS1");
 		return "homepage";
 	}
 
-	@RequestMapping("/delete-user") //wzor
+	@RequestMapping("/delete-user")
 	public String deleteUser(@RequestParam int id, HttpServletRequest request) {
 		userService.deleteMyUser(id);
 		request.setAttribute("users", userService.showAllUsers());
-		request.setAttribute("mode", "ALL_USERS"); //ERROR
+		request.setAttribute("mode", "ALL_USERS");
 		return "welcomepage";
 	}
 
-	@RequestMapping("/delete-user1") //dodane///////////////////
+	@RequestMapping("/delete-user1")
 	public String deleteUser1(@RequestParam int id, HttpServletRequest request) {
 		wordService.deleteMyWord(id);
 		request.setAttribute("words", wordService.showAllWords());
-		request.setAttribute("mode", "ALL_USERS1"); //ERROR
+		request.setAttribute("mode", "ALL_USERS1");
 		return "homepage";
 	}
 	
-	@RequestMapping("/edit-user") //wzor
+	@RequestMapping("/edit-user")
 	public String editUser(@RequestParam int id,HttpServletRequest request) {
 		request.setAttribute("user", userService.editUser(id));
-		request.setAttribute("mode", "MODE_UPDATE"); //ERROR
+		request.setAttribute("mode", "MODE_UPDATE");
 		return "welcomepage";
 	}
 
-	@RequestMapping("/edit-user1") //dodane///////////////////
+	@RequestMapping("/edit-user1")
 	public String editUser1(@RequestParam int id,HttpServletRequest request) {
 		request.setAttribute("word", wordService.editWord(id));
-		request.setAttribute("mode", "MODE_UPDATE1"); //ERROR
+		request.setAttribute("mode", "MODE_UPDATE1");
 		return "homepage";
 	}
 	
 	@RequestMapping("/login")
 	public String login(HttpServletRequest request) {
-		request.setAttribute("mode", "MODE_LOGIN"); //UName, password
+		request.setAttribute("mode", "MODE_LOGIN");
 		return "welcomepage";
 	}
 	
 	@RequestMapping ("/login-user")
 	public String loginUser(@ModelAttribute User user, HttpServletRequest request) {
 		if(userService.findByUsernameAndPassword(user.getUsername(), user.getPassword())!=null) {
-			return "homepage"; //strona z filmami
+			return "homepage";
 		}
 		else {
-			request.setAttribute("error", "Invalid Username or Password"); //invalid
-			request.setAttribute("mode", "MODE_LOGIN"); //UName, password
+			request.setAttribute("error", "Invalid Username or Password");
+			request.setAttribute("mode", "MODE_LOGIN");
 			return "welcomepage";
 			
 		}
